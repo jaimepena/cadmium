@@ -1,0 +1,40 @@
+# Figure settings
+figure.dpi: 300
+figure.constrained_layout.use: True
+# Font settings
+font.family: Roboto
+font.size: 10 # Base font size
+font.weight: normal
+# Title and label sizes
+axes.titlesize: 9.5 # heading_fontsize
+axes.titleweight: bold
+axes.labelsize: 810 # axis_fontsize
+axes.labelweight: normal
+axes.prop_cycle: cycler('color', ['#099062', '#2f9eca', '#4970a7', '#685e96', '#732f68', '#170c12'])
+# axes.prop_cycle: cycler(color='bryk')
+# Tick settings
+xtick.labelsize: 12 # tick_fontsize
+ytick.labelsize: 12
+xtick.direction: out
+ytick.direction: out
+ytick.right: False
+ytick.minor.right: False
+# Spine visibility
+axes.spines.top: False
+axes.spines.left: False
+axes.spines.right: False
+# Grid settings
+grid.alpha: 0.7
+grid.linewidth: 0.5
+grid.linestyle: -
+# Line properties
+lines.linewidth: 1.5
+# Legend settings
+legend.fontsize: 8
+legend.frameon: False
+# Source text size
+figure.labelsize: 6.5
+figure.labelweight: light
+# Additional spacing/layout
+figure.constrained_layout.h_pad: 0.08 # Converting 6 pts to inches
+figure.constrained_layout.w_pad: 0.08
