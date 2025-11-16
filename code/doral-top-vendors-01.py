@@ -76,6 +76,3 @@ fig.savefig('plots/Top_Vendors_by_Year.png', dpi=300)
 
 
 
-
-
-

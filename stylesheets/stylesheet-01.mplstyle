@@ -10,8 +10,8 @@ axes.titlesize: 9.5 # heading_fontsize
 axes.titleweight: bold
 axes.labelsize: 810 # axis_fontsize
 axes.labelweight: normal
-axes.prop_cycle: cycler('color', ['#099062', '#2f9eca', '#4970a7', '#685e96', '#732f68', '#170c12'])
-# axes.prop_cycle: cycler(color='bryk')
+# axes.prop_cycle: cycler('color', ['#099062', '#2f9eca', '#4970a7', '#685e96', '#732f68', '#170c12'])
+axes.prop_cycle: cycler(color='bgrcmyk')
 # Tick settings
 xtick.labelsize: 12 # tick_fontsize
 ytick.labelsize: 12
