@@ -211,7 +211,7 @@ fig.text(
     0.01, 0.01,  # Bottom left corner
     "Source: Mario Kart World Records site",
     color="#888888",  # Subtle gray
-    fontsize=7,
+    fontsize=6,
     ha='left',
     va='bottom',
     fontproperties=ft_VT323,  # Or any font you prefer
