@@ -207,6 +207,18 @@ fig_text(
 )
 
 
+fig.text(
+    0.01, 0.01,  # Bottom left corner
+    "Source: Mario Kart World Records site",
+    color="#888888",  # Subtle gray
+    fontsize=7,
+    ha='left',
+    va='bottom',
+    fontproperties=ft_VT323,  # Or any font you prefer
+    transform=fig.transFigure,
+    zorder=1000
+)
+
 fig.tight_layout()
 plt.subplots_adjust(top=0.80)
 fig.savefig('plots/MarioKart-Finish-01.png')
