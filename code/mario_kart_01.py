@@ -32,34 +32,12 @@ m = [
 ]
 
 mario_colors = [
-    "#f3f6a7",
+    "#f2f6a7",
     '#E5341D',
     '#12AE00',
     '#FFFFB4',
     "#F7B500",  # yellow amber
     '#D20303',  # traffice light red
-    '#A65332',
-    '#66772D',
-    '#939FAF',
-    "#8EE466",
-    '#CE4C26',
-    '#8A8E7F',
-    '#E9C076',
-    '#8A8E80',
-    '#FAED86',
-    '#B9F973',    
-    '#edeada',
-    '#100f24',
-    '#5d8d60',
-    '#c74634',
-    '#e55d82',    
-    "#89b7d6",
-    '#e8bd00',
-    '#7b6500',
-    '#dd2020', 
-    '#fad2a8',
-    '#B1F382',  
-    '#9C5335'
 ]
 
 def jitter(df, col, amount=0.30):
@@ -112,7 +90,7 @@ ax.tick_params(axis='y', length=0)
 ax.tick_params(labelsize=6)
 ax.set_yticklabels(tracks, fontproperties=ft_VT323, fontsize=8)
 
-time_label = ['0s', '50s', '100s', '150s', '200s', '250s', '300s', '350s']
+time_label = ['0 seconds', '50s', '100s', '150s', '200s', '250s', '300s', '350s']
 ax.set_xticks(np.arange(8)*50)
 ax.set_xticklabels(time_label, fontproperties=ft_VT323, fontsize=8)
 ax.tick_params(axis='x', length=0)
