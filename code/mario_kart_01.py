@@ -27,9 +27,12 @@ df_mario = df_mario.with_columns(
 
 from pypalettes import load_cmap
 cmap = load_cmap("FridaKahlo").colors
+m = [
+    ''
+]
 
 mario_colors = [
-    '#FCED94',
+    "#f3f6a7",
     '#E5341D',
     '#12AE00',
     '#FFFFB4',
@@ -103,6 +106,7 @@ ax.scatter(df_mario.time,
            edgecolors='white', 
            linewidths=0.04
 )
+
 ax.set_yticks(np.arange(len(tracks)))
 ax.tick_params(axis='y', length=0)
 ax.tick_params(labelsize=6)
