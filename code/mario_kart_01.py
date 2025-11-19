@@ -28,7 +28,17 @@ df_mario = df_mario.with_columns(
 from pypalettes import load_cmap
 cmap = load_cmap("FridaKahlo").colors
 m = [
-    ''
+    "#f2f6a7",
+    '#E5341D',
+    '#12AE00',
+    '#FFFFB4',
+    "#F7B500",  # yellow amber
+    '#D20303',  # traffice light red
+]
+mario_pastel_colors = [
+    "#FDF6C7",  # pastel yellow
+    "#8FEA7F",  # pastel green
+    "#E9A8A0",  # pastel red
 ]
 
 mario_colors = [
@@ -203,7 +213,7 @@ fig.text(
 
 fig.tight_layout()
 plt.subplots_adjust(top=0.80)
-fig.savefig('plots/MarioKart-Finish-01.png')
+fig.savefig('plots/MarioKart-Records-01.png')
 #plt.show()
 
 
