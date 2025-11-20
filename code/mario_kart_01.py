@@ -28,17 +28,6 @@ df_mario = df_mario.with_columns(
 from pypalettes import load_cmap
 cmap = load_cmap("FridaKahlo").colors
 
-
-
-# mario_colors = [
-#     cmap[2],
-#     cmap[-1],
-#     cmap[1],
-#     '#FFFFB4',
-#     cmap[-2],  # yellow amber
-#     cmap[-1],  # traffice light red
-# ]
-
 mario_colors = [
     '#fbfbfd',
     '#fc233a',
@@ -51,6 +40,19 @@ mario_colors = [
     '#612415',
     '#fc233a'
 ]
+
+# mario_colors = [
+#     '#fcfcfa',
+#     cmap[-1],
+#     cmap[1],
+#     '#fcfcfa',
+#     '#fcfcfa',
+#     cmap[-1],
+#     '#1f1010',
+#     cmap[-2],  # yellow amber
+#     cmap[-1],  # traffice light red
+#     cmap[-1],  # traffice light red
+# ]
 
 def jitter(df, col, amount=0.30):
     return df[col].to_numpy().astype(float) + np.random.uniform(-amount, amount, len(df))
@@ -68,6 +70,13 @@ df_mario = df_mario.with_columns(
 
 df_mario = df_mario.filter(pl.col('type') == 'Three Lap')
 df_mario = df_mario.sort('track', descending=True)
+
+df_mario = (
+    df_mario
+    .with_columns(
+        pl.col("time").rank("ordinal", descending=False).over("track").alias("time_rank")
+    )
+)
 
 
 notoEmoji = load_google_font("Noto Emoji")
@@ -90,12 +99,42 @@ ax.scatter([], [], color=mario_colors[2], label='No Shortcut', s=20, edgecolors=
 
 ax.scatter(df_mario.time, 
            df_mario.track_index_jitter, 
-           alpha=.75, 
+           alpha=.90, 
            s=4, 
            color=df_mario.shortcut_flag_color,
            edgecolors='white', 
            linewidths=0.04
 )
+top = df_mario[df_mario['time_rank'] == 1]
+ax.scatter(top.time, 
+           top.track_index_jitter, 
+           alpha=.9, 
+           s=4, 
+           color=top.shortcut_flag_color,
+           edgecolors='gold', 
+           linewidths=.5
+)
+
+second = df_mario[df_mario['time_rank'] == 2]
+ax.scatter(second.time, 
+           second.track_index_jitter, 
+           alpha=.9, 
+           s=4, 
+           color=second.shortcut_flag_color,
+           edgecolors='silver', 
+           linewidths=.5
+)
+
+third = df_mario[df_mario['time_rank'] == 3]
+ax.scatter(third.time, 
+           third.track_index_jitter, 
+           alpha=.9, 
+           s=4, 
+           color=third.shortcut_flag_color,
+           edgecolors='sienna', 
+           linewidths=.5
+)
+
 
 ax.set_yticks(np.arange(len(tracks)))
 ax.tick_params(axis='y', length=0)
@@ -215,7 +254,7 @@ fig.text(
 
 fig.tight_layout()
 plt.subplots_adjust(top=0.80)
-fig.savefig('plots/MarioKart-Records-01.png')
+fig.savefig('plots/MarioKart-Records-02.png')
 #plt.show()
 
 
