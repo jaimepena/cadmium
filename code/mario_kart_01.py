@@ -42,12 +42,12 @@ mario_pastel_colors = [
 ]
 
 mario_colors = [
-    "#f2f6a7",
-    '#E5341D',
-    '#12AE00',
+    "#FFFFA8",
+    cmap[-1],
+    cmap[1],
     '#FFFFB4',
-    "#F7B500",  # yellow amber
-    '#D20303',  # traffice light red
+    cmap[-2],  # yellow amber
+    cmap[-1],  # traffice light red
 ]
 
 def jitter(df, col, amount=0.30):
