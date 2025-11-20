@@ -27,27 +27,29 @@ df_mario = df_mario.with_columns(
 
 from pypalettes import load_cmap
 cmap = load_cmap("FridaKahlo").colors
-m = [
-    "#f2f6a7",
-    '#E5341D',
-    '#12AE00',
-    '#FFFFB4',
-    "#F7B500",  # yellow amber
-    '#D20303',  # traffice light red
-]
-mario_pastel_colors = [
-    "#FDF6C7",  # pastel yellow
-    "#8FEA7F",  # pastel green
-    "#E9A8A0",  # pastel red
-]
+
+
+
+# mario_colors = [
+#     cmap[2],
+#     cmap[-1],
+#     cmap[1],
+#     '#FFFFB4',
+#     cmap[-2],  # yellow amber
+#     cmap[-1],  # traffice light red
+# ]
 
 mario_colors = [
-    "#FFFFA8",
-    cmap[-1],
-    cmap[1],
-    '#FFFFB4',
-    cmap[-2],  # yellow amber
-    cmap[-1],  # traffice light red
+    '#fbfbfd',
+    '#fc233a',
+    '#1639bf',
+    '#fbfbfd',
+    '#fbfbfd',
+    '#fc233a',
+    '#1f1010',
+    '#e3ad6b',
+    '#612415',
+    '#fc233a'
 ]
 
 def jitter(df, col, amount=0.30):
@@ -88,7 +90,7 @@ ax.scatter([], [], color=mario_colors[2], label='No Shortcut', s=20, edgecolors=
 
 ax.scatter(df_mario.time, 
            df_mario.track_index_jitter, 
-           alpha=1, 
+           alpha=.75, 
            s=4, 
            color=df_mario.shortcut_flag_color,
            edgecolors='white', 
@@ -108,8 +110,8 @@ ax.tick_params(axis='x', length=0)
 ax.spines[['top', 'right', 'left', 'bottom']].set_visible(False)
 
 ax.grid(True, which='major', axis='y', 
-        color=mario_colors[5], 
-        linestyle='--', linewidth=0.3, alpha=0.5)
+        color=mario_colors[6], 
+        linestyle='--', linewidth=0.3, alpha=0.2)
 
 # Add the legend
 ft_Silkscreenont.set_size(4)
